@@ -2,6 +2,11 @@
 
 Real time object detection in dark using YOLO darknet.
 
+Some samples.
+<p style="max-width:40%;"> <img src="Detection in light.jpg"/> </p>
+
+<p style="max-width: 62%;"> <img src="Detection in dark.jpg"/> </p>
+
 <h3>Dependencies</h3>
 
 Python3, tensorflow 1.0, numpy, opencv 3.
