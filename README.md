@@ -3,9 +3,11 @@
 Real time object detection in dark using YOLO darknet.
 
 Some samples.
-<p style="max-width:40%;"> <img src="Detection in light.jpg"/> </p>
+<p style="max-width:40%;"> <h5>Object detection in light mode.</h5>
+  <img src="Detection in light.jpg"/> </p>
 
-<p style="max-width: 62%;"> <img src="Detection in dark.jpg"/> </p>
+<p style="max-width: 62%;"><h5>Object detection in dark mode.</h5>
+  <img src="Detection in dark.jpg"/> </p>
 
 <h3>Dependencies</h3>
 
