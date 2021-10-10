@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+{% block content %}
+
+			{% if current_user.is_authenticated %}
+
+
+				<div class="content-section">
+
+
+				<form method="POST" action="" enctype="multipart/form-data">
+					{{ form.hidden_tag() }}
+				<fieldset class="form-group">
+                <legend class="border-bottom mb-4">InVision</legend>
+
+                <div class="form-group">
+                    Select a video file for recognition
+
+                    {{ form.picture(class="form-control-file") }}
+                    {% if form.picture.errors %}
+                        {% for error in form.picture.errors %}
+                            <span class="text-danger">{{ error }}</span></br>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+				</fieldset>
+				<div class="form-group">
+					{{ form.submit(class="btn btn-outline-info") }}
+				</div>
+				</form>
+			</div>
+
+
+			<div class="content-section">
+
+
+
+					<form action="{{ url_for('check_camera') }}" method="POST">
+						<input type="text"  name="Camera Number" value=0 >
+						<input class="btn btn btn-secondary mt-3" type="submit" value="Check Camera" >
+					</form>
+
+					<form action="{{ url_for('start_camera') }}" method="POST">
+						<input class="btn btn btn-secondary mt-3" type="submit" value="Start Camera on system">
+					</form>
+
+
+					<form action="{{ url_for('video_viewer') }}" method="POST">
+							<input type="text"  name="Camera Number" value=0>
+						<input class="btn btn btn-secondary mt-3" type="submit" value="open camera on web">
+					</form>
+
+				<form action="{{ url_for('start_live_surveillance') }}" method="POST">
+						<br>
+					Enter camera Number: <input type="text"  name="Camera Number" value=0>
+
+					Enter label:<input type="text"  name="label" value="person">
+
+						<input class="btn btn btn-secondary mt-3" type="submit" value="Start live surveillance">
+					</form>
+
+
+			</div>
+
+
+			{% else %}
+
+		   {% endif %}
+
+{% endblock content %}
